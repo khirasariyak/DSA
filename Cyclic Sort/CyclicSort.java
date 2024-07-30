@@ -1,12 +1,5 @@
 public class CyclicSort {
 
-    /*
-     * Identification
-     *
-     * The problem will involve an array of ‘n’ numbers containing numbers in the range of 1 to ‘n’.
-     *
-     * */
-
     public void sort(int[] nums) {
 
         int i = 0;
