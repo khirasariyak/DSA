@@ -19,7 +19,7 @@ public class CountOccurrenceOfAnagram {
         }
 
         Map<Character, Integer> patternMap = createMap(pattern);
-        Map<Character, Integer> currentWindowMap = getInitialWindow(text, patternLength);
+        Map<Character, Integer> currentWindowMap = createMap(text.substring(0, patternLength));
         int count = 0;
 
         if (patternMap.equals(currentWindowMap)) {
@@ -31,11 +31,11 @@ public class CountOccurrenceOfAnagram {
             char charToAdd = text.charAt(i + patternLength - 1);
 
             currentWindowMap.put(charToRemove, currentWindowMap.getOrDefault(charToRemove, 0) - 1);
-            currentWindowMap.put(charToAdd, currentWindowMap.getOrDefault(charToAdd, 0) + 1);
-
             if (currentWindowMap.get(charToRemove) == 0) {
                 currentWindowMap.remove(charToRemove);
             }
+
+            currentWindowMap.put(charToAdd, currentWindowMap.getOrDefault(charToAdd, 0) + 1);
 
             if (patternMap.equals(currentWindowMap)) {
                 count++;
@@ -43,10 +43,6 @@ public class CountOccurrenceOfAnagram {
         }
 
         return count;
-    }
-
-    private static Map<Character, Integer> getInitialWindow(String text, int requiredLength) {
-        return createMap(text.substring(0, requiredLength));
     }
 
     private static Map<Character, Integer> createMap(String str) {
