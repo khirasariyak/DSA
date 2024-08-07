@@ -18,6 +18,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
             char c = s.charAt(j);
             map.put(c, map.getOrDefault(c, 0) + 1);
 
+            // Or you can check, map.get(c) > 1
             while (map.size() < j - i + 1) {
                 char charToRemove = s.charAt(i);
                 map.put(charToRemove, map.get(charToRemove) - 1);
