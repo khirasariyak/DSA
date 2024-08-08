@@ -75,9 +75,6 @@ public class SubSetSum {
 
     private static boolean isSubSetSumBottomUp(int[] arr, int sum) {
 
-        // we can use boolean[][] dp as well
-        // tomorrow try writing the naive approach and then memoization
-
         int[][] dp = new int[arr.length + 1][sum + 1];
 
         for (int j = 0; j < dp[0].length; j++) {
