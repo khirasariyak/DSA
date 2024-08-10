@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 public class SubSetSum {
+    
     public static void main(String[] args) {
         int[] arr = {2, 3, 7, 8, 10};
         int sum = 11;
