@@ -1,5 +1,9 @@
 import java.util.Arrays;
 
+/*
+* https://www.geeksforgeeks.org/problems/subset-sum-problem2014/1
+* */
+
 public class EqualPartitionSum {
     
     public static void main(String[] args) {

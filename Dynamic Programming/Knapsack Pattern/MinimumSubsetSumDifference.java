@@ -1,6 +1,10 @@
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
+/*
+* https://www.geeksforgeeks.org/problems/minimum-sum-partition3317/1
+* */
+
 public class MinimumSubsetSumDifference {
 
     public static void main(String[] args) {

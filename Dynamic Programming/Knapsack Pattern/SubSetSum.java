@@ -1,5 +1,9 @@
 import java.util.Arrays;
 
+/*
+* https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1
+* */
+
 public class SubSetSum {
     
     public static void main(String[] args) {

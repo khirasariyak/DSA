@@ -1,5 +1,9 @@
 import java.util.Arrays;
 
+/*
+* https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/1
+* */
+
 public class CountSubsetsWithSumK {
 
     public static void main(String[] args) {
