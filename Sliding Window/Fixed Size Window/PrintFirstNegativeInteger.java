@@ -2,6 +2,10 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+* https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
+* */
+
 public class PrintFirstNegativeInteger {
 
   public static void main(String[] args) {
