@@ -41,9 +41,7 @@ public class LongestCommonSubstring {
 
         int[][] dp = new int[n + 1][m + 1];
 
-        for (int[] row : dp) {
-            Arrays.fill(row, -1);
-        }
+        // We should not initialize with -1 as we are doing addition on them so
 
         for (int i = 0; i < dp[0].length; i++) {
             dp[0][i] = 0;
