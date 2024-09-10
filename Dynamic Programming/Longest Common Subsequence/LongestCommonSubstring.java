@@ -37,7 +37,7 @@ public class LongestCommonSubstring {
         return count;
     }
 
-    private static int longestCommonSubsequenceBottomUp(String s1, String s2, int n, int m) {
+    private static int longestCommonSubstringBottomUp(String s1, String s2, int n, int m) {
 
         int[][] dp = new int[n + 1][m + 1];
 
