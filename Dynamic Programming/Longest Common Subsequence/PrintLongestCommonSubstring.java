@@ -52,6 +52,7 @@ public class PrintLongestCommonSubstring {
             }
         }
 
+        // If we assign endIndex = j, then we have to substring from s2 string.
         return s1.substring(endIndex - max, endIndex);
     }
 
