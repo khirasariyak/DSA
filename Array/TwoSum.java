@@ -9,16 +9,16 @@ import java.util.Map;
 public class TwoSum {
 
     public static void main(String[] args) {
-        int[] arr = {2, 7, 11, 15};
+        int[] nums = {2, 7, 11, 15};
         int target = 9;
-        System.out.println(Arrays.toString(twoSumBruteForce(arr, target)));
-        System.out.println(Arrays.toString(twoSum(arr, target)));
+        System.out.println(Arrays.toString(twoSumBruteForce(nums, target)));
+        System.out.println(Arrays.toString(twoSum(nums, target)));
     }
     
-    private static int[] twoSumBruteForce(int[] arr, int target) {
+    private static int[] twoSumBruteForce(int[] nums, int target) {
 
-        for (int i : arr) {
-            for (int j : arr) {
+        for (int i : nums) {
+            for (int j : nums) {
                 if (i + j == target) {
                     return new int[]{i, j};
                 }
@@ -28,16 +28,16 @@ public class TwoSum {
         return new int[]{};
     }
 
-    private static int[] twoSum(int[] arr, int target) {
+    private static int[] twoSum(int[] nums, int target) {
 
         Map<Integer, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
 
-            if (map.containsKey(target - arr[i])) {
-                return new int[]{i, map.get(target - arr[i])};
+            if (map.containsKey(target - nums[i])) {
+                return new int[]{i, map.get(target - nums[i])};
             } else {
-                map.put(arr[i], i);
+                map.put(nums[i], i);
             }
 
         }
