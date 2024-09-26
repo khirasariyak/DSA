@@ -11,8 +11,21 @@ public class TwoSum {
     public static void main(String[] args) {
         int[] arr = {2, 7, 11, 15};
         int target = 9;
-        int[] result = twoSum(arr, target);
-        System.out.println(Arrays.toString(result));
+        System.out.println(Arrays.toString(twoSumBruteForce(arr, target)));
+        System.out.println(Arrays.toString(twoSum(arr, target)));
+    }
+    
+    private static int[] twoSumBruteForce(int[] arr, int target) {
+
+        for (int i : arr) {
+            for (int j : arr) {
+                if (i + j == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        
+        return new int[]{};
     }
 
     private static int[] twoSum(int[] arr, int target) {
