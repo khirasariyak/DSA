@@ -1,6 +1,6 @@
 /*
-* https://leetcode.com/problems/3sum/
-* */
+ * https://leetcode.com/problems/3sum/
+ * */
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class ThreeSum {
 
     public static void main(String[] args) {
-        int[] nums = {-1,0,1,2,-1,-4};
+        int[] nums = {-1, 0, 1, 2, -1, -4};
         System.out.println(threeSum(nums));
     }
 
@@ -47,5 +47,5 @@ public class ThreeSum {
 
         return new ArrayList<>(result);
     }
-    
+
 }
