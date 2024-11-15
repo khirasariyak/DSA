@@ -9,8 +9,6 @@ public class NumberOf1Bits {
     }
 
     public static int hammingWeight(int n) {
-
-        // return n & (n - 1)
         
         int count = 0;
         while (n != 0) {
