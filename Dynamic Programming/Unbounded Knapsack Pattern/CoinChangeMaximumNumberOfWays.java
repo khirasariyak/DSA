@@ -4,21 +4,21 @@ import java.util.Arrays;
 * https://www.geeksforgeeks.org/problems/coin-change2448/1
 * */
 
-public class CoinChangeMaximumNumber {
+public class CoinChangeMaximumNumberOfWays {
 
     public static void main(String[] args) {
         int[] coins = {1, 2, 3};
         int amount = 5;
-        coinChangeMaximumNumber(coins, amount);
+        coinChangeMaximumNumberOfWays(coins, amount);
     }
 
-    private static void coinChangeMaximumNumber(int[] coins, int amount) {
-        System.out.println("Naive Recursive Result=" + coinChangeMaximumNumberRecursive(coins, amount, coins.length));
+    private static void coinChangeMaximumNumberOfWays(int[] coins, int amount) {
+        System.out.println("Naive Recursive Result=" + coinChangeMaximumNumberOfWaysRecursive(coins, amount, coins.length));
         System.out.println("Memoization Result=" + coinChangeWithMemoization(coins, amount, coins.length, initializeDP(coins, amount)));
-        System.out.println("Bottom Up Result=" + coinChangeMaximumNumberBottomUp(coins, amount));
+        System.out.println("Bottom Up Result=" + coinChangeMaximumNumberOfWaysBottomUp(coins, amount));
     }
 
-    private static int coinChangeMaximumNumberRecursive(int[] coins, int amount, int length) {
+    private static int coinChangeMaximumNumberOfWaysRecursive(int[] coins, int amount, int length) {
 
         if (amount == 0) {
             return 1;
@@ -29,10 +29,10 @@ public class CoinChangeMaximumNumber {
         }
 
         if(coins[length - 1] <= amount) {
-            return coinChangeMaximumNumberRecursive(coins, amount - coins[length - 1], length)
-                    + coinChangeMaximumNumberRecursive(coins, amount, length - 1);
+            return coinChangeMaximumNumberOfWaysRecursive(coins, amount - coins[length - 1], length)
+                    + coinChangeMaximumNumberOfWaysRecursive(coins, amount, length - 1);
         } else {
-            return coinChangeMaximumNumberRecursive(coins, amount, length - 1);
+            return coinChangeMaximumNumberOfWaysRecursive(coins, amount, length - 1);
         }
 
     }
@@ -80,7 +80,7 @@ public class CoinChangeMaximumNumber {
         return dp[length][amount];
     }
 
-    private static int coinChangeMaximumNumberBottomUp(int[] coins, int amount) {
+    private static int coinChangeMaximumNumberOfWaysBottomUp(int[] coins, int amount) {
 
         int[][] dp = new int[coins.length + 1][amount + 1];
 
