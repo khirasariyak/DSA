@@ -5,15 +5,15 @@ import java.util.Stack;
 * https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1
 * */
 
-public class NextGreaterElement {
+public class NearestGreaterToRight {
 
     public static void main(String[] args) {
         int[] arr = {4, 5, 2, 10, 8};
-        System.out.println(Arrays.toString(nextGreaterElementBruteForce(arr)));
-        System.out.println(Arrays.toString(nextGreaterElement(arr)));
+        System.out.println(Arrays.toString(nearestGreaterToRightBruteForce(arr)));
+        System.out.println(Arrays.toString(nearestGreaterToRight(arr)));
     }
 
-    private static int[] nextGreaterElementBruteForce(int[] arr) {
+    private static int[] nearestGreaterToRightBruteForce(int[] arr) {
 
         int[] result = new int[arr.length];
 
@@ -31,7 +31,7 @@ public class NextGreaterElement {
         return result;
     }
 
-    private static int[] nextGreaterElement(int[] arr) {
+    private static int[] nearestGreaterToRight(int[] arr) {
 
         Stack<Integer> stack = new Stack<>();
         int[] result = new int[arr.length];
