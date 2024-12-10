@@ -5,6 +5,7 @@
 public class NumberOfTimesSortedArrayIsRotated {
 
     public static void main(String[] args) {
+        // index of minimum element
         int[] arr = {11, 12, 15, 18, 2, 5, 6, 8};
         System.out.println(numberOfTimesSortedArrayIsRotatedBruteForce(arr));
         System.out.println(numberOfTimesSortedArrayIsRotated(arr));
