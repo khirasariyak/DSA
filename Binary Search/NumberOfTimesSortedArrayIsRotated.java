@@ -5,7 +5,6 @@
 public class NumberOfTimesSortedArrayIsRotated {
 
     public static void main(String[] args) {
-        // index of minimum element
         int[] arr = {11, 12, 15, 18, 2, 5, 6, 8};
         System.out.println(numberOfTimesSortedArrayIsRotatedBruteForce(arr));
         System.out.println(numberOfTimesSortedArrayIsRotated(arr));
@@ -29,40 +28,40 @@ public class NumberOfTimesSortedArrayIsRotated {
         return minElementIndex;
     }
 
-    private static int numberOfTimesSortedArrayIsRotated(int[] nums) {
+    private static int numberOfTimesSortedArrayIsRotated(int[] arr) {
 
         // Time complexity: O(log n)
         // Space complexity: O(1)
 
         int mid;
-        int left = 0;
-        int right = nums.length - 1;
+        int start = 0;
+        int end = arr.length - 1;
         int ans = Integer.MAX_VALUE;
         int index = -1;
 
-        while (left <= right) {
+        while (start <= end) {
 
-            mid = left + (right - left) / 2;
+            mid = start + (end - start) / 2;
 
-            if (nums[left] <= nums[right]) {
-                if (nums[left] < ans) {
-                    index = left;
+            if (arr[start] <= arr[end]) {
+                if (arr[start] < ans) {
+                    index = start;
                 }
                 break;
             }
 
-            if (nums[left] <= nums[mid]) {
-                if (nums[left] < ans) {
-                    ans = nums[left];
-                    index = left;
+            if (arr[start] <= arr[mid]) {
+                if (arr[start] < ans) {
+                    ans = arr[start];
+                    index = start;
                 }
-                left = mid + 1;
+                start = mid + 1;
             } else {
-                if (nums[right] < ans) {
-                    ans = nums[right];
-                    index = right;
+                if (arr[end] < ans) {
+                    ans = arr[end];
+                    index = end;
                 }
-                right = mid;
+                end = mid;
             }
 
         }
