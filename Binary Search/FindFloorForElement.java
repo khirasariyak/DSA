@@ -44,7 +44,7 @@ public class FindFloorForElement {
             }
 
             if (nums[mid] < target) {
-                index = Math.max(index, mid);
+                index = mid;
                 left = mid + 1;
             } else {
                 right = mid - 1;
