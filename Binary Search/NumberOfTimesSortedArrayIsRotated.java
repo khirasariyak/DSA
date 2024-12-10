@@ -6,12 +6,12 @@ public class NumberOfTimesSortedArrayIsRotated {
 
     public static void main(String[] args) {
         // index of minimum element
-        int[] arr = {11, 12, 15, 18, 2, 5, 6, 8};
-        System.out.println(numberOfTimesSortedArrayIsRotatedBruteForce(arr));
-        System.out.println(numberOfTimesSortedArrayIsRotated(arr));
+        int[] nums = {11, 12, 15, 18, 2, 5, 6, 8};
+        System.out.println(numberOfTimesSortedArrayIsRotatedBruteForce(nums));
+        System.out.println(numberOfTimesSortedArrayIsRotated(nums));
     }
 
-    private static int numberOfTimesSortedArrayIsRotatedBruteForce(int[] arr) {
+    private static int numberOfTimesSortedArrayIsRotatedBruteForce(int[] nums) {
 
         // Time complexity: O(n)
         // Space complexity: O(1)
@@ -19,9 +19,9 @@ public class NumberOfTimesSortedArrayIsRotated {
         int minElement = Integer.MAX_VALUE;
         int minElementIndex = -1;
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < minElement) {
-                minElement = arr[i];
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < minElement) {
+                minElement = nums[i];
                 minElementIndex = i;
             }
         }
@@ -29,40 +29,40 @@ public class NumberOfTimesSortedArrayIsRotated {
         return minElementIndex;
     }
 
-    private static int numberOfTimesSortedArrayIsRotated(int[] arr) {
+    private static int numberOfTimesSortedArrayIsRotated(int[] nums) {
 
         // Time complexity: O(log n)
         // Space complexity: O(1)
 
         int mid;
-        int start = 0;
-        int end = arr.length - 1;
-        int ans = Integer.MAX_VALUE;
+        int left = 0;
         int index = -1;
+        int ans = Integer.MAX_VALUE;
+        int right = nums.length - 1;
 
-        while (start <= end) {
+        while (left <= right) {
 
-            mid = start + (end - start) / 2;
+            mid = left + (right - left) / 2;
 
-            if (arr[start] <= arr[end]) {
-                if (arr[start] < ans) {
-                    index = start;
+            if (nums[left] <= nums[right]) {
+                if (nums[left] < ans) {
+                    index = left;
                 }
                 break;
             }
 
-            if (arr[start] <= arr[mid]) {
-                if (arr[start] < ans) {
-                    ans = arr[start];
-                    index = start;
+            if (nums[left] <= nums[mid]) {
+                if (nums[left] < ans) {
+                    ans = nums[left];
+                    index = left;
                 }
-                start = mid + 1;
+                left = mid + 1;
             } else {
-                if (arr[end] < ans) {
-                    ans = arr[end];
-                    index = end;
+                if (nums[right] < ans) {
+                    ans = nums[right];
+                    index = right;
                 }
-                end = mid;
+                right = mid;
             }
 
         }

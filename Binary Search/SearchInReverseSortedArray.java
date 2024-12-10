@@ -7,33 +7,33 @@ package BinarySearch;
 public class SearchInReverseSortedArray {
 
     public static void main(String[] args) {
-        int[] arr = {4, 3, 2, 1, 0, -1, -2, -3, -4};
+        int[] nums = {4, 3, 2, 1, 0, -1, -2, -3, -4};
         int target = -3;
-        System.out.println(searchInReverseSortedArray(arr, target));
+        System.out.println(searchInReverseSortedArray(nums, target));
     }
 
-    private static int searchInReverseSortedArray(int[] arr, int target) {
+    private static int searchInReverseSortedArray(int[] nums, int target) {
 
-        if (arr == null || arr.length == 0) {
+        if (nums == null || nums.length == 0) {
             return -1;
         }
 
         int mid;
-        int start = 0;
-        int end = arr.length - 1;
+        int left = 0;
+        int right = nums.length - 1;
 
-        while (start <= end) {
+        while (left <= right) {
 
-            mid = start + (end - start) / 2;
+            mid = left + (right - left) / 2;
 
-            if (arr[mid] == target) {
+            if (nums[mid] == target) {
                 return mid;
             }
 
-            if (arr[mid] < target) {
-                end = mid - 1;
+            if (nums[mid] < target) {
+                right = mid - 1;
             } else {
-                start = mid + 1;
+                left = mid + 1;
             }
         }
 

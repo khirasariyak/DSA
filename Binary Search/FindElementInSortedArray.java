@@ -5,16 +5,16 @@
 public class FindElementInSortedArray {
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5};
+        int[] nums = {1, 2, 3, 4, 5};
         int target = 3;
-        System.out.println(findElementBruteForce(arr, target));
-        System.out.println(findElement(arr, target));
+        System.out.println(findElementBruteForce(nums, target));
+        System.out.println(findElement(nums, target));
     }
 
-    private static int findElementBruteForce(int[] arr, int target) {
+    private static int findElementBruteForce(int[] nums, int target) {
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == target) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target) {
                 return i;
             }
         }
@@ -22,38 +22,38 @@ public class FindElementInSortedArray {
         return -1;
     }
 
-    private static int findElement(int[] arr, int target) {
+    private static int findElement(int[] nums, int target) {
 
         int mid;
-        int start = 0;
+        int left = 0;
         int index = -1;
-        int end = arr.length - 1;
+        int right = nums.length - 1;
 
-        while (start <= end) {
+        while (left <= right) {
 
-            mid = start + (end - start) / 2;
+            mid = left + (right - left) / 2;
 
-            if (arr[mid] == target) {
+            if (nums[mid] == target) {
                 index = mid;
                 break;
             }
 
-            if (arr[start] <= arr[mid]) {
+            if (nums[left] <= nums[mid]) {
                 // left half is sorted
                 // we are not checking <= for mid as we already have checked for mid
-                if (arr[start] <= target && target < arr[mid]) {
-                    end = mid - 1;
+                if (nums[left] <= target && target < nums[mid]) {
+                    right = mid - 1;
                 } else {
-                    start = mid + 1;
+                    left = mid + 1;
                 }
 
             } else {
                 // right half is sorted
                 // we are not checking <= for mid as we already have checked for mid
-                if (arr[mid] < target && target <= arr[end]) {
-                    start = mid + 1;
+                if (nums[mid] < target && target <= nums[right]) {
+                    left = mid + 1;
                 } else {
-                    end = mid - 1;
+                    right = mid - 1;
                 }
 
             }
