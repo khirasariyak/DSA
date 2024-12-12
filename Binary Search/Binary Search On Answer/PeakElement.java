@@ -4,6 +4,8 @@
 
 public class PeakElement {
 
+    // Maximun element from bitonic array (same problem)
+    
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 1};
         System.out.println(findPeakElementBruteForce(nums));
