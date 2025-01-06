@@ -12,6 +12,9 @@ public class AddTwoNumbersUsingLinkedList {
 
     private static ListNode add(ListNode first, ListNode second, int carry) {
 
+        first = reverse(first);
+        second = reverse(second);
+
         ListNode temp1 = first;
         ListNode temp2 = second;
 
@@ -39,7 +42,23 @@ public class AddTwoNumbersUsingLinkedList {
             current = current.next;
         }
 
-        return dummy.next;
+        return reverse(dummy.next);
+    }
+
+    public static ListNode reverse(ListNode head) {
+
+        ListNode next;
+        ListNode prev = null;
+        ListNode current = head;
+
+        while(current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        return prev;
     }
 
 }
