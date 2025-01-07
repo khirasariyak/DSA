@@ -23,8 +23,8 @@ public class FlatteningLinkedList {
             return root;
         }
 
-        root.next = flatten(root.next);
-        return merge(root, root.next);
+        Node next = flatten(root.next);
+        return merge(root, next);
     }
 
     private Node merge(Node first, Node second) {
