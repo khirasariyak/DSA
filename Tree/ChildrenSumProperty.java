@@ -47,6 +47,7 @@ public class ChildrenSumProperty {
             total += root.right.value;
         }
 
+        // not leaf node
         if (root.left != null || root.right != null) {
             root.value = total;
         }
