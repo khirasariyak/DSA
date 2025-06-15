@@ -15,38 +15,43 @@ public class CopyLinkedListWithRandomPointers {
             return null;
         }
 
-        Node temp = head;
-
-        while (temp != null) {
-            Node node = new Node(temp.val);
-            node.next = temp.next;
-            temp.next = node;
-            temp = node.next;
-        }
-
-        temp = head;
-        while (temp != null && temp.next != null) {
-            if (temp.random != null) {
-                temp.next.random = temp.random.next;
-            }
-            temp = temp.next.next;
-        }
-
+        // Step-1: Place the new copied node in-between the nodes
         Node curr = head;
-        Node newHead = head.next;
-        Node newCurr = newHead;
+        while (curr != null) {
+            Node node = new Node(curr.val);
+            node.next = curr.next;
+            curr.next = node;
+            curr = curr.next.next;
+        }
+
+        // Step-2: Update the random pointers
+        curr = head;
+        while(curr != null) {
+            Node temp = curr.next;
+
+            if (curr.random == null) {
+                temp.random = null;
+            } else {
+                temp.random = curr.random.next;
+            }
+
+            curr = curr.next.next;
+        }
+
+        // Step-3: Update the next pointers
+        curr = head;
+        Node dummy = new Node(-1);
+        Node temp = dummy;
 
         while (curr != null) {
-            curr.next = newCurr.next;
-            curr = curr.next;
+            temp.next = curr.next;
+            temp = temp.next;
 
-            if (curr != null) {
-                newCurr.next = curr.next;
-                newCurr = newCurr.next;
-            }
+            curr.next = curr.next.next;
+            curr = curr.next;
         }
 
-        return newHead;
+        return dummy.next;
     }
 
 }
