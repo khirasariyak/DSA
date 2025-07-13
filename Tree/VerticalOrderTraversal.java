@@ -68,4 +68,51 @@ public class VerticalOrderTraversal {
         return ans;
     }
 
+    // Simpler approach
+    // not considering the following scenario
+    // "If two nodes are at the same column and same row, which one comes first in the output?"
+    public List<List<Integer>> verticalOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) return result;
+
+        Map<Integer, List<Integer>> columnTable = new HashMap<>();
+        Queue<Pair> queue = new LinkedList<>();
+        queue.offer(new Pair(root, 0));
+
+        int min = 0, max = 0;
+
+        while (!queue.isEmpty()) {
+            Pair p = queue.poll();
+            TreeNode node = p.node;
+            int column = p.column;
+
+            if (!columnTable.containsKey(column)) {
+                columnTable.put(column, new ArrayList<>());
+            }
+            columnTable.get(column).add(node.val);
+
+            min = Math.min(min, column);
+            max = Math.max(max, column);
+
+            if (node.left != null) queue.offer(new Pair(node.left, column - 1));
+            if (node.right != null) queue.offer(new Pair(node.right, column + 1));
+        }
+
+        // Iterate from min to max column index
+        for (int i = min; i <= max; i++) {
+            result.add(columnTable.get(i));
+        }
+
+        return result;
+    }
+
+    private static class Pair {
+        TreeNode node;
+        int column;
+        Pair(TreeNode n, int col) {
+            node = n;
+            column = col;
+        }
+    }
+    
 }
