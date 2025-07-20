@@ -1,9 +1,11 @@
-/*
-* https://leetcode.com/problems/k-diff-pairs-in-an-array/description/
-* */
+package Array;
 
 import java.util.HashMap;
 import java.util.Map;
+
+/*
+* https://leetcode.com/problems/k-diff-pairs-in-an-array/description/
+* */
 
 public class KDifferentPairs {
 

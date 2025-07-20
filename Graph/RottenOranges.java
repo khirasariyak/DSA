@@ -1,3 +1,5 @@
+package Graph;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -8,8 +10,6 @@ import java.util.Queue;
 public class RottenOranges {
 
     public int orangesRotting(int[][] mat) {
-        // Code here
-
         int n = mat.length;
         int m = mat[0].length;
         int[][] vis = new int[n][m];

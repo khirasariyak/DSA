@@ -1,3 +1,5 @@
+package LinkedList;
+
 /*
 * https://www.geeksforgeeks.org/problems/remove-duplicates-from-an-unsorted-linked-list/1
 * */

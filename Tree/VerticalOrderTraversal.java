@@ -1,12 +1,19 @@
 package Tree;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.TreeMap;
+
+/*
+* https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
+*
+* Solution is giving wrong answer, need to rectify them
+* */
 
 public class VerticalOrderTraversal {
 
@@ -89,7 +96,7 @@ public class VerticalOrderTraversal {
             if (!columnTable.containsKey(column)) {
                 columnTable.put(column, new ArrayList<>());
             }
-            columnTable.get(column).add(node.val);
+            columnTable.get(column).add(node.value);
 
             min = Math.min(min, column);
             max = Math.max(max, column);

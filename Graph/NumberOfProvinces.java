@@ -1,3 +1,5 @@
+package Graph;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class NumberOfProvinces {
 
         int V = isConnected.length;
 
-        Disjoint ds = new Disjoint(V);
+        DisjointSet ds = new DisjointSet(V);
 
         for (int i = 0; i < V; i++) {
             for (int j = 0; j < V; j++) {

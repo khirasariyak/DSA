@@ -1,3 +1,5 @@
+package LinkedList;
+
 /*
 * https://leetcode.com/problems/reverse-nodes-in-k-group/description/
 */
@@ -58,6 +60,32 @@ public class ReverseKGroup {
         }
 
         return dummy.next;
+    }
+
+    public ListNode reverseKGroupAlways2(ListNode head, int k) {
+
+        if (head == null) {
+            return null;
+        }
+
+        int count = 0;
+        ListNode next = null;
+        ListNode prev = null;
+        ListNode current = head;
+
+        while (current != null && count < k) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+            count++;
+        }
+
+        if (next != null) {
+            head.next = reverseKGroupAlways2(next, k);
+        }
+
+        return prev;
     }
 
     // 🔧 Get the k-th node starting from curr (0-based index)

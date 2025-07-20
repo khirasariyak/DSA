@@ -1,4 +1,12 @@
-import java.util.*;
+package Heap;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Set;
 
 /*
 * https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/

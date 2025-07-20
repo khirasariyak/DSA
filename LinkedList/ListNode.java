@@ -1,6 +1,8 @@
+package LinkedList;
+
 public class ListNode {
     int val;
-    LinkedList.ListNode next;
+    ListNode next;
 
     ListNode() {
     }
@@ -9,7 +11,7 @@ public class ListNode {
         this.val = val;
     }
 
-    ListNode(int val, LinkedList.ListNode next) {
+    ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }

@@ -1,13 +1,19 @@
+package Graph;
 
-// https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
+/*
+* https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1
+* */
 
 class DFS {
     
-    ArrayList<Integer> ans = new ArrayList<>();
+    List<Integer> ans = new ArrayList<>();
     
     // Function to return a list containing the DFS traversal of the graph.
-    public ArrayList<Integer> dfsOfGraph(ArrayList<ArrayList<Integer>> adj) {
-        // Code here
+    public List<Integer> dfsOfGraph(List<List<Integer>> adj) {
         
         int V = adj.size();
         
@@ -22,7 +28,7 @@ class DFS {
         return ans;
     }
     
-    public void dfsRecursive(int i, int V, boolean[] vis, ArrayList<ArrayList<Integer>> adj) {
+    public void dfsRecursive(int i, int V, boolean[] vis, List<List<Integer>> adj) {
         
         vis[i] = true;
         ans.add(i);
@@ -37,11 +43,11 @@ class DFS {
         
     }
 
-    public ArrayList<Integer> dfsIterative(ArrayList<ArrayList<Integer>> adj) {
+    public List<Integer> dfsIterative(List<List<Integer>> adj) {
           
           boolean[] vis = new boolean[adj.size()];
           Stack<Integer> s = new Stack<>();
-          ArrayList<Integer> list = new ArrayList<>();
+          List<Integer> list = new ArrayList<>();
           
           s.push(0);
           vis[0] = true;

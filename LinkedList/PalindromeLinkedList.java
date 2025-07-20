@@ -1,4 +1,4 @@
-import static LinkedList.ListNode.getLinkedList;
+package LinkedList;
 
 /*
  * https://leetcode.com/problems/palindrome-linked-list/description/
@@ -7,7 +7,7 @@ import static LinkedList.ListNode.getLinkedList;
 public class PalindromeLinkedList {
 
     public static void main(String[] args) {
-        ListNode list = getLinkedList();
+        ListNode list = ListNode.getLinkedList();
         System.out.println(isPalindromicLinkedList(list));
     }
 

@@ -1,13 +1,6 @@
+package Tree;
+
 public class MorrisTraversal {
-
-    public static class TreeNode {
-        int value;
-        TreeNode left, right;
-
-        TreeNode(int value) {
-            this.value = value;
-        }
-    }
 
     public void morrisInorder(TreeNode root) {
         TreeNode current = root;

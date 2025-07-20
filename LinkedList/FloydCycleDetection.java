@@ -1,3 +1,5 @@
+package LinkedList;
+
 /*
 * https://leetcode.com/problems/linked-list-cycle/description/
 * https://leetcode.com/problems/linked-list-cycle-ii/description/
