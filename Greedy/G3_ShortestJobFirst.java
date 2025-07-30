@@ -6,7 +6,7 @@ import java.util.Arrays;
 * https://www.geeksforgeeks.org/problems/shortest-job-first/1
 * */
 
-public class ShortestJobFirst {
+public class G3_ShortestJobFirst {
 
     public static void main(String[] args) {
         System.out.println(calculateAverageWaitingTime(new int[]{4, 3, 7, 1, 2}));

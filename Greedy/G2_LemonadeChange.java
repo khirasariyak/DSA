@@ -4,7 +4,7 @@ package Greedy;
  * https://leetcode.com/problems/lemonade-change/description/
  * */
 
-public class LemonadeChange {
+public class G2_LemonadeChange {
 
     public static void main(String[] args) {
         System.out.println(lemonadeChange(new int[]{5, 5, 5, 10, 20}));

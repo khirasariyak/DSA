@@ -4,7 +4,7 @@ package Greedy;
 * https://leetcode.com/problems/jump-game/description/
 * */
 
-public class JumpGame {
+public class G4_JumpGame {
 
     public static void main(String[] args) {
         System.out.println(canJump(new int[]{3, 2, 1, 0, 4}));

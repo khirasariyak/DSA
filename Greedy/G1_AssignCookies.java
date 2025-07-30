@@ -6,7 +6,7 @@ import java.util.Arrays;
 * https://leetcode.com/problems/assign-cookies/description/
 * */
 
-public class AssignCookies {
+public class G1_AssignCookies {
 
     public static void main(String[] args) {
         System.out.println(findContentChildren(
