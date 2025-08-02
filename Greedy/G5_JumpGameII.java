@@ -147,4 +147,31 @@ public class G5_JumpGameII {
         return count;
     }
 
+    // a bit easier to understand
+    public int jumpWithGreedyBeginner(int[] nums) {
+        int n = nums.length;
+        if (n == 1) {
+            return 0;
+        }
+
+        int left = 0;
+        int right = 0;
+        int jumps = 0;
+        int farthest = 0;
+
+        while (right <= n - 2) {
+            for (int i = left; i <= right; i++) {
+                farthest = Math.max(farthest, i + nums[i]);
+                if (farthest >= n - 1) {
+                    return jumps + 1;
+                }
+            }
+            left = right + 1;
+            right = farthest;
+            jumps++;
+        }
+
+        return jumps;
+    }
+
 }
