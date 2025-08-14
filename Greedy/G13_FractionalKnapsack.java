@@ -10,7 +10,7 @@ import java.util.Comparator;
 public class G13_FractionalKnapsack {
 
     double fractionalKnapsack(int[] values, int[] weights, int W) {
-        // code here
+
         double[][] items = new double[values.length][2];
         for (int i = 0; i < values.length; i++) {
             items[i][0] = (double) values[i] / weights[i];

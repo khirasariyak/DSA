@@ -7,6 +7,7 @@ package Greedy;
 public class G12_Candy {
 
     public int candyBruteForce(int[] ratings) {
+
         int length = ratings.length;
         int[] left = new int[length];
         int[] right = new int[length];
@@ -39,6 +40,7 @@ public class G12_Candy {
     }
 
     public int candyBruteForceII(int[] ratings) {
+
         int length = ratings.length;
         int[] left = new int[length];
 
@@ -69,11 +71,11 @@ public class G12_Candy {
 
     public int candyOptimal(int[] ratings) {
 
-        int n = ratings.length;
+        int length = ratings.length;
         int idx = 1;
         int candies = 1;
 
-        while(idx < n) {
+        while (idx < length) {
 
             if (ratings[idx] == ratings[idx - 1]) {
                 candies += 1;
@@ -82,20 +84,20 @@ public class G12_Candy {
             }
 
             int up = 1;
-            while(idx < n && ratings[idx] > ratings[idx - 1]) {
+            while (idx < length && ratings[idx] > ratings[idx - 1]) {
                 up++;
                 candies += up;
                 idx++;
             }
 
             int down = 1;
-            while(idx < n && ratings[idx] < ratings[idx - 1]) {
+            while (idx < length && ratings[idx] < ratings[idx - 1]) {
                 candies += down;
                 down++;
                 idx++;
             }
 
-            if(down > up) {
+            if (down > up) {
                 candies += down - up;
             }
         }
