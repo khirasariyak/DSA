@@ -25,10 +25,11 @@ public class MergeOverlappingIntervals {
         List<int[]> result = new ArrayList<>();
 
         for (int[] interval : intervals) {
-            if (result.isEmpty() || interval[0] > result.get(result.size() - 1)[1]) {
+            int[] last = result.getLast();
+            if (result.isEmpty() || interval[0] > last[1]) {
                 result.add(interval);
             } else {
-                result.get(result.size() - 1)[1] = Math.max(result.get(result.size() - 1)[1], interval[1]);
+                last[1] = Math.max(last[1], interval[1]);
             }
         }
         return result.toArray(new int[result.size()][]);

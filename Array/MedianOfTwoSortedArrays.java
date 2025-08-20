@@ -6,38 +6,72 @@ package Array;
 
 public class MedianOfTwoSortedArrays {
 
-    public double findMedianSortedArraysBetter(int[] nums1, int[] nums2) {
-        int len1 = nums1.length;
-        int len2 = nums2.length;
+    public double findMedianSortedArraysBetter(int[] a, int[] b) {
+        int n1 = a.length;
+        int n2 = b.length;
+
+        int n = n1 + n2; //total size
+
+        // required indices:
+        int ind2 = n / 2;
+        int ind1 = ind2 - 1;
+        int cnt = 0;
+        int ind1el = -1;
+        int ind2el = -1;
+
+        // apply the merge step
         int i = 0;
         int j = 0;
-        int median1 = 0;
-        int median2 = 0;
-
-        for (int count = 0; count < (len1 + len2) / 2 + 1; count++) {
-            median2 = median1;
-            if (i < len1 && j < len2) {
-                if (nums1[i] > nums2[j]) {
-                    median1 = nums2[j];
-                    j++;
-                } else {
-                    median1 = nums1[i];
-                    i++;
+        while (i < n1 && j < n2) {
+            if (a[i] < b[j]) {
+                if (cnt == ind1) {
+                    ind1el = a[i];
                 }
-            } else if (i < len1) {
-                median1 = nums1[i];
+                if (cnt == ind2) {
+                    ind2el = a[i];
+                }
+                cnt++;
                 i++;
             } else {
-                median1 = nums2[j];
+                if (cnt == ind1) {
+                    ind1el = b[j];
+                }
+                if (cnt == ind2) {
+                    ind2el = b[j];
+                }
+                cnt++;
                 j++;
             }
         }
 
-        if ((len1 + len2) % 2 == 1) {
-            return (double) median1;
-        } else {
-            return (median1 + median2) / 2.0;
+        //copy the left-out elements:
+        while (i < n1) {
+            if (cnt == ind1) {
+                ind1el = a[i];
+            }
+            if (cnt == ind2) {
+                ind2el = a[i];
+            }
+            cnt++;
+            i++;
         }
+        while (j < n2) {
+            if (cnt == ind1) {
+                ind1el = b[j];
+            }
+            if (cnt == ind2) {
+                ind2el = b[j];
+            }
+            cnt++;
+            j++;
+        }
+
+        //Find the median:
+        if (n % 2 == 1) {
+            return ind2el;
+        }
+
+        return ((double)(ind1el + ind2el)) / 2.0;
     }
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
