@@ -13,7 +13,7 @@ public class EvenOddPrinter {
                     if (counter % 2 == 0) {
                         System.out.println("Even Thread: " + counter);
                         counter++;
-                        lock.notify();;
+                        lock.notify();
                     } else {
                         try {
                             lock.wait();
@@ -43,7 +43,6 @@ public class EvenOddPrinter {
                             throw new RuntimeException(e);
                         }
                     }
-
                 }
             }
         }
